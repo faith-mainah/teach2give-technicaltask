@@ -1,0 +1,95 @@
+'''Question 1: FizzBuzz
+Write a program that prints the numbers from 1 to 100. For multiples of 3, print "Fizz"; for
+multiples of 5, print "Buzz"; and for numbers that are multiples of both 3 and 5, print
+"FizzBuzz"'''
+
+
+for i in range(1, 101):
+        if i % 3 == 0 and i % 5 == 0:
+            print("FizzBuzz")
+        elif i % 3 == 0:
+            print("Fizz")
+        elif i % 5 == 0:
+            print("Buzz")
+        else:
+            print(i)
+
+
+'''Question 2: Fibonacci Sequence
+Write a program to generate the Fibonacci sequence up to 100.'''
+
+def fibonacci_sequence(n):
+    fibonacci_sequence = [0, 1]
+    while fibonacci_sequence[-1] + fibonacci_sequence[-2] <= n:
+        fibonacci_sequence.append(fibonacci_sequence[-1] + fibonacci_sequence[-2])
+    return fibonacci_sequence
+
+print(fibonacci_sequence(100))
+
+'''Question 3: Power of Two
+Write a program that takes an integer as input and returns true if the input is a power of two.
+
+Examples:
+8=> returns true
+6=> returns false'''
+
+
+def is_power_of_two(n):
+ if n <= 0:
+    return False
+ return (n & (n - 1)) == 0
+#examples 15 and 16
+print(is_power_of_two(15))  # 15 is not a power of two hence false
+print(is_power_of_two(16))  # 16 is a power of two hence true
+
+'''Question 4: Capitalize Words
+Write a program that accepts a string as input, capitalizes the first letter of each word in the
+string, and then returns the result string.
+Examples:
+
+"hi"=> returns "Hi"
+"i love programming"=> returns "I Love Programming"'''
+
+
+def capitalize_words(input_str):
+    words = input_str.split()
+    capitalized_words = [word.capitalize() for word in words]
+    return ' '.join(capitalized_words)
+
+# example
+print(capitalize_words("faith is a computer science student"))  #output:Faith Is A Computer Science Student
+
+'''Write a program that takes an integer as input and returns an integer with reversed digit
+ordering.
+Examples:
+
+For input 500, the program should return 5.
+For input -56, the program should return -65.
+For input -90, the program should return -9.
+For input 91, the program should return 19.'''
+
+def reverse_integer(num):
+    if num < 0:
+        return -int(str(-num)[::-1])
+    else:
+        return int(str(num)[::-1])
+
+# examples
+print(reverse_integer(178))  # Output: 871
+print(reverse_integer(-543))  # Output: -345
+
+'''Question 6: Count Vowels
+Write a program that counts the number of vowels in a sentence.
+
+eg " Hello World " => returns 2'''
+
+def count_vowels(sentence):
+    vowels = 'aeiouAEIOU'
+    count = 0
+    for char in sentence:
+        if char in vowels:
+            count += 1
+    return count
+
+# example
+print(count_vowels("credinta"))  # Output: 3
